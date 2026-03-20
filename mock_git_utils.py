@@ -24,8 +24,9 @@ class MockCommit:
 
 
 class MockGitRepository:
-    def __init__(self, commits: list[MockCommit]):
-        self._commits = commits
+    def __init__(self, path: str):
+        self.path = path
+        self._commits = SAMPLE_COMMITS
 
     def get_commits(self, days: int) -> list[MockCommit]:
         return self._commits
